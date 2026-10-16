@@ -59,11 +59,11 @@ export default function PhotoLightbox({ photo, onClose }: Props) {
         <button className="lightbox-close" onClick={onClose} aria-label="Đóng">
           <X size={22} strokeWidth={1.8} />
         </button>
-        <div className="lightbox-sphere-frame">
-          <img src={photo.image} alt={photo.title} />
-        </div>
-        <div className="lightbox-body">
-          <h2 id="lightbox-title">{photo.title}</h2>
+        <div className="lightbox-polaroid">
+          <div className="lightbox-frame">
+            <img src={photo.image} alt={photo.title} />
+          </div>
+          <p className="lightbox-caption">{photo.title}</p>
         </div>
       </div>
     </div>

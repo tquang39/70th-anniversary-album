@@ -10,7 +10,7 @@ export default function FutureSection() {
         <div className="future-core" />
       </div>
       <p className="eyebrow">TIẾP BƯỚC HÔM NAY, HƯỚNG TỚI NGÀY MAI</p>
-      <h2>Xin tri ân những thế hệ đã đặt nền móng<br /><em>và vun đắp cho sự nghiệp giáo dục.</em></h2>
+      <h2>Xin tri ân những thế hệ đã đặt nền móng<br />và vun đắp cho sự nghiệp giáo dục.</h2>
       <p className="future-copy">
         Ký ức được lưu giữ để truyền thống tiếp tục tỏa sáng.
       </p>

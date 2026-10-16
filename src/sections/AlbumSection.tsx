@@ -3,7 +3,7 @@ import { X, ChevronDown, ChevronUp } from "lucide-react";
 import { SectionHeading } from "../components/SectionHeading";
 import { albumTopics } from "../data/photos";
 
-function ImageLightbox({ src, onClose }: { src: string; onClose: () => void }) {
+function ImageLightbox({ src, caption, onClose }: { src: string; caption: string; onClose: () => void }) {
   const handleKeyDown = useCallback((e: KeyboardEvent) => {
     if (e.key === "Escape") onClose();
   }, [onClose]);
@@ -22,18 +22,24 @@ function ImageLightbox({ src, onClose }: { src: string; onClose: () => void }) {
       <button className="lightbox-close" onClick={onClose} aria-label="Đóng">
         <X size={28} />
       </button>
-      <img src={src} alt="" className="lightbox-img" onClick={(e) => e.stopPropagation()} />
+      <div className="lightbox-polaroid" onClick={(e) => e.stopPropagation()}>
+        <img src={src} alt={caption} />
+        <p className="lightbox-caption">{caption}</p>
+      </div>
     </div>
   );
 }
 
-function AlbumGrid({ images, expanded, onImageClick }: { images: string[]; expanded: boolean; onImageClick: (src: string) => void }) {
+function AlbumGrid({ images, expanded, onImageClick }: { images: { src: string; caption: string }[]; expanded: boolean; onImageClick: (src: string, caption: string) => void }) {
   const displayImages = expanded ? images : images.slice(0, 6);
   return (
     <div className="album-topic-grid">
-      {displayImages.map((src, i) => (
-        <div className="album-topic-item" key={i} onClick={() => onImageClick(src)}>
-          <img src={src} alt="" loading="lazy" />
+      {displayImages.map((img, i) => (
+        <div className="album-topic-item" key={i} onClick={() => onImageClick(img.src, img.caption)}>
+          <img src={img.src} alt={img.caption} loading="lazy" />
+          <div className="album-overlay">
+            <span className="album-overlay-title">{img.caption}</span>
+          </div>
         </div>
       ))}
     </div>
@@ -41,7 +47,7 @@ function AlbumGrid({ images, expanded, onImageClick }: { images: string[]; expan
 }
 
 export default function AlbumSection() {
-  const [selectedImage, setSelectedImage] = useState<string | null>(null);
+  const [selectedImage, setSelectedImage] = useState<{ src: string; caption: string } | null>(null);
   const [expandedTopics, setExpandedTopics] = useState<Record<string, boolean>>({});
 
   const toggleTopic = (id: string) => {
@@ -67,7 +73,7 @@ export default function AlbumSection() {
               <AlbumGrid
                 images={topic.images}
                 expanded={isExpanded}
-                onImageClick={setSelectedImage}
+                onImageClick={(src, caption) => setSelectedImage({ src, caption })}
               />
               {topic.images.length > 6 && (
                 <div className="album-loadmore">
@@ -91,7 +97,7 @@ export default function AlbumSection() {
         })}
       </div>
       {selectedImage && (
-        <ImageLightbox src={selectedImage} onClose={() => setSelectedImage(null)} />
+        <ImageLightbox src={selectedImage.src} caption={selectedImage.caption} onClose={() => setSelectedImage(null)} />
       )}
     </section>
   );
