@@ -11,7 +11,7 @@ const SPHERE_RADIUS = 1.45;
 const AUTO_ROTATE_SPEED = 0.055;
 const ATLAS_COLS = 8;
 const ATLAS_ROWS = 8;
-const CELL = 256;
+const CELL = 512;
 const AW = ATLAS_COLS * CELL;
 const AH = ATLAS_ROWS * CELL;
 

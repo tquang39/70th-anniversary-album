@@ -6,7 +6,7 @@ export default function HeroSection() {
     <section className="hero" id="home" data-reveal>
       <div className="hero-copy">
         <p className="hero-badge"><span className="hero-badge-dot" aria-hidden="true"></span>70 NăM KỶ NIỆM</p>
-        <h1><span className="gold">70</span> <span className="gold-unit">NĂM</span> — HÀNH TRÌNH TRI THỨC</h1>
+        <h1><span className="gold">70</span> <span className="gold-unit">NĂM</span> <span className="hero-title-rest">HÀNH TRÌNH TRI THỨC</span></h1>
         <p className="hero-subtitle">Bảy mươi năm – Một dòng chảy tri thức. Tiếp nối truyền thống, kiến tạo tương lai.</p>
         <p className="hero-lead">
           Từ những ngày đầu tiên đến hôm nay, mỗi thế hệ đã góp thêm một chương

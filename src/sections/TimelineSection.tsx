@@ -10,7 +10,6 @@ function TimelineCard({ item, index, onImageClick }: { item: typeof timeline[num
     <article
       className={`timeline-content cursor-pointer ${expanded ? "timeline-expanded" : ""}`}
       onClick={() => setExpanded(!expanded)}
-      data-reveal
     >
       <div style={{ display: "flex", justifyContent: "space-between", alignItems: "flex-start", gap: 12 }}>
         <div style={{ flex: 1 }}>
@@ -97,7 +96,7 @@ export default function TimelineSection() {
       />
       <ol className="timeline-list">
         {timeline.map((item, index) => (
-          <li className="timeline-item" key={item.year}>
+          <li className="timeline-item" key={item.year} data-reveal>
             <div className="timeline-marker">
               <span className="timeline-chapter">CHƯƠNG {String(index + 1).padStart(2, "0")}</span>
               <span className="timeline-year">{item.year}</span>
