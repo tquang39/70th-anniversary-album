@@ -9,11 +9,10 @@ export default function FutureSection() {
         <div className="future-ring" />
         <div className="future-core" />
       </div>
-      <p className="eyebrow">70 NĂM — VÀ CÒN TIẾP NỮA</p>
-      <h2>Gìn giữ ký ức.<br /><em>Kiến tạo tương lai.</em></h2>
+      <p className="eyebrow">TIẾP BƯỚC HÔM NAY, HƯỚNG TỚI NGÀY MAI</p>
+      <h2>Xin tri ân những thế hệ đã đặt nền móng<br /><em>và vun đắp cho sự nghiệp giáo dục.</em></h2>
       <p className="future-copy">
-        Hành trình này được viết tiếp bởi những con người đang học tập, nghiên cứu
-        và khám phá hôm nay.
+        Ký ức được lưu giữ để truyền thống tiếp tục tỏa sáng.
       </p>
       <div className="future-links">
         <a href="#timeline">

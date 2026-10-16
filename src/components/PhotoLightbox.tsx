@@ -1,6 +1,5 @@
 import { useEffect, useRef } from "react";
 import { X } from "lucide-react";
-import PhotoImage from "./PhotoImage";
 import type { PhotoItem } from "../types";
 import { useEscapeKey } from "../hooks/useEscapeKey";
 import { useBodyScrollLock } from "../hooks/useBodyScrollLock";
@@ -60,23 +59,11 @@ export default function PhotoLightbox({ photo, onClose }: Props) {
         <button className="lightbox-close" onClick={onClose} aria-label="Đóng">
           <X size={22} strokeWidth={1.8} />
         </button>
-        <div className="lightbox-frame">
-          <PhotoImage
-            src={photo.image}
-            alt={photo.title}
-            tone={photo.tone}
-            label={photo.year}
-            variant="wide"
-          />
+        <div className="lightbox-sphere-frame">
+          <img src={photo.image} alt={photo.title} />
         </div>
         <div className="lightbox-body">
-          <p className="eyebrow">{photo.period} · {photo.year}</p>
           <h2 id="lightbox-title">{photo.title}</h2>
-          <p>{photo.description}</p>
-          <dl className="lightbox-meta">
-            <dt>Nguồn tư liệu</dt>
-            <dd>{photo.source}</dd>
-          </dl>
         </div>
       </div>
     </div>

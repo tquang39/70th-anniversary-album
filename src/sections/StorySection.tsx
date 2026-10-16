@@ -4,11 +4,10 @@ export default function StorySection() {
   return (
     <section className="story section-shell" id="story" data-reveal>
       <div className="story-inner">
-        <p className="eyebrow">MỘT DÒNG CHẢY LIÊN TỤC</p>
-        <h2>Quá khứ tạo nên hôm nay.<br /><em>Hôm nay mở đường tương lai.</em></h2>
+        <p className="eyebrow">BẢY MƯƠI NĂM, MỘT HÀNH TRÌNH</p>
+        <h2>Có những hành trình được đo bằng năm tháng,<br /><em>có những giá trị được gìn giữ qua nhiều thế hệ.</em></h2>
         <p className="section-lead">
-          Mỗi bức ảnh là một lát cắt thời gian. Mỗi dấu mốc là một câu chuyện về
-          con người, giảng đường và những khám phá được tiếp nối qua nhiều thế hệ.
+          Với Khoa Toán – Cơ – Tin học, hành trình ấy được viết nên từ tri thức, sự tận tâm của các thế hệ thầy cô và nỗ lực bền bỉ của sinh viên. Bảy mươi năm không chỉ là cột mốc nhìn lại, mà là điểm nối giữa ký ức và khát vọng, giữa những thành tựu đã có và chân trời đang mở ra.
         </p>
         <ul className="story-links" data-reveal>
           <li>

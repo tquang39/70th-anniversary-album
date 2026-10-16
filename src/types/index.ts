@@ -17,6 +17,8 @@ export type TimelineItem = {
   title: string;
   description: string;
   timeNote?: string;
+  detail?: string;
+  images?: string[];
   image?: string;
   imageSource?: string;
   tone?: PhotoTone;

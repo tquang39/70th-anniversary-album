@@ -21,7 +21,7 @@ export default function Header() {
 
   useEffect(() => {
     const onResize = () => {
-      if (window.innerWidth > 880) setMenuOpen(false);
+      if (window.innerWidth > 640) setMenuOpen(false);
     };
     window.addEventListener("resize", onResize);
     return () => window.removeEventListener("resize", onResize);
@@ -32,11 +32,9 @@ export default function Header() {
   return (
     <header className={`site-header${scrolled ? " is-scrolled" : ""}`}>
       <a className="brand" href="#home" aria-label="Khoa Toán – Cơ – Tin học — về trang chủ">
-        <span className="brand-mark" aria-hidden="true">70</span>
-        <span className="brand-copy">
-          <strong>Khoa Toán – Cơ – Tin học</strong>
-          <small>Kỷ niệm 70 năm</small>
-        </span>
+        <img className="brand-logo" src="/assets/logo-a70.png" alt="Logo 70 năm" />
+        <span className="brand-divider" aria-hidden="true"></span>
+        <span className="brand-name">Khoa Toán - Cơ - Tin học</span>
       </a>
 
       <nav id="primary-nav" className={`site-nav${menuOpen ? " is-open" : ""}`} aria-label="Điều hướng chính">
