@@ -14,173 +14,79 @@ export type AlbumTopic = {
   images: AlbumImage[];
 };
 
-const albumToSphereMapping: Record<string, string> = {};
-
-const folder1Images = ["img-01","img-02","img-03","img-04","img-05","img-06","img-07","img-08","img-09"];
-const folder2Images = ["img-10","img-11","img-12","img-13","img-14","img-15","img-16"];
-const folder3Images = ["img-17","img-18","img-19","img-20","img-21","img-22","img-23","img-24"];
-const folder4Images = ["img-25","img-26","img-27","img-28","img-29","img-30","img-31","img-32","img-33","img-34"];
-const folder6Images = ["img-35","img-36","img-37","img-38","img-39","img-40","img-41","img-42"];
-const folder7Images = ["img-43","img-44","img-45","img-46","img-47","img-48","img-49","img-50","img-51","img-52"];
-const folder8Images = ["img-53","img-54","img-55","img-56","img-57","img-58","img-59","img-60","img-61"];
-
-for (let i = 1; i <= 9; i++) albumToSphereMapping[`/assets/album/1/img${String(i).padStart(2,"0")}.jpg`] = folder1Images[i-1];
-for (let i = 1; i <= 7; i++) albumToSphereMapping[`/assets/album/2/img${String(i).padStart(2,"0")}.jpg`] = folder2Images[i-1];
-for (let i = 1; i <= 8; i++) albumToSphereMapping[`/assets/album/3/img${String(i).padStart(2,"0")}.jpg`] = folder3Images[i-1];
-for (let i = 1; i <= 10; i++) albumToSphereMapping[`/assets/album/4/img${String(i).padStart(2,"0")}.jpg`] = folder4Images[i-1];
-for (let i = 1; i <= 8; i++) albumToSphereMapping[`/assets/album/6/img${String(i).padStart(2,"0")}.jpg`] = folder6Images[i-1];
-for (let i = 1; i <= 10; i++) albumToSphereMapping[`/assets/album/7/img${String(i).padStart(2,"0")}.jpg`] = folder7Images[i-1];
-for (let i = 1; i <= 9; i++) albumToSphereMapping[`/assets/album/8/img${String(i).padStart(2,"0")}.jpg`] = folder8Images[i-1];
-
-const sphereTitles: Record<string, string> = {
-  "img-01": "Ảnh chụp chung các giáo sư thế hệ đầu",
-  "img-02": "Ảnh đại học tổng hợp xưa",
-  "img-03": "Bác Hồ cùng Tổng Thống Nhật Bản thăm đại học Tổng Hợp",
-  "img-04": "Bác Hồ tại lễ khai giảng Đại học tổng hợp",
-  "img-05": "Giáo sư Đàm Trung Đồn cùng đại tướng Võ Nguyên Giáp",
-  "img-06": "Giáo sư Lê Văn Thiêm ghé thăm các học trò tại ĐH Lomonosov năm 1961",
-  "img-07": "Giáo sư Lê Văn Thiêm với cụm công trình toán học ứng dụng",
-  "img-08": "GS Lê Văn Hợp cùng sinh viên khoa toán K1",
-  "img-09": "Hiệu trưởng đầu tiên của đại học khoa học tự nhiên",
-  "img-10": "3 sinh viên K14 Toán cơ Tin Học",
-  "img-11": "Chuyên KHTN by VNU Media",
-  "img-12": "Lễ trao thưởng giảng viên giỏi năm 1994",
-  "img-13": "Một số sinh viên K14 Toán cơ Tin Học",
-  "img-14": "Một số sinh viên K14 Toán-Cơ-Tin Học",
-  "img-15": "Sinh viên K14 khoa Toán Cơ Tin học",
-  "img-16": "Thầy và trò khối Chuyên Toán 1974",
-  "img-17": "Bế giản khóa 14 khoa Toán năm 1974",
-  "img-18": "Bộ đội biệt phái K14",
-  "img-19": "Phát biểu bế giảng khoa học lớp Cơ",
-  "img-20": "Sinh viên K14 tiếp quản trung tâm máy tính năm 1975",
-  "img-21": "Sinh viên nam K14 khoa Toán Cơ",
-  "img-22": "Sinh viên nữ K14",
-  "img-23": "Sinh viên Toán Cơ K14",
-  "img-24": "Tập thể sinh viên K14 khoa Toán",
-  "img-25": "Ảnh tập thể giảng viên năm 2016",
-  "img-26": "Ảnh tập thể giảng viên",
-  "img-27": "Buổi seminar năm 2026",
-  "img-28": "Các giảng viên tham gia lễ trao giải toán học xuất sắc 2023",
-  "img-29": "Gặp mặt các thế hệ",
-  "img-30": "GS Lê Văn Thiêm và các học trò ở ĐH Lomonosov năm 1961",
-  "img-31": "Họp mặt cựu sinh viên năm 2016",
-  "img-32": "Ngày hướng nghiệp năm 2016",
-  "img-33": "Sinh viên K57 nhận bằng tốt nghiệp năm 2016",
-  "img-34": "Sinh viên K67 nhận bằng tốt nghiệp năm 2026",
-  "img-35": "60 năm Khoa Toán - Cơ - Tin học",
-  "img-36": "Ảnh chụp tập thể",
-  "img-37": "Ảnh sinh viên tại Hola Park",
-  "img-38": "Cuộc thi Data Flow cho sinh viên",
-  "img-39": "Hội trường tầng 7",
-  "img-40": "Sinh viên đi dã ngoại",
-  "img-41": "Tập huấn kỹ năng mềm cho sinh viên",
-  "img-42": "Trường hè 2026",
-  "img-43": "Đội ngũ giảng viên khoa Toán Cơ Tin học 2026",
-  "img-44": "Gặp mặt sinh viên K70 năm 2025",
-  "img-45": "Hội nghị khoa học sinh viên 2026",
-  "img-46": "Hội thảo chia sẻ về định hướng việc làm cho sinh viên ngành Toán học và Toán tin 2025",
-  "img-47": "Lễ tổng kết và trao Giải thưởng công trình toán học xuất sắc năm 2023",
-  "img-48": "Lễ tốt nghiệp năm 2026",
-  "img-49": "Ngày hướng nghiệp 2026",
-  "img-50": "Sinh viên Khoa tham gia trường hè toán 2022",
-  "img-51": "Tập thể cán bộ Khoa Toán - Cơ - Tin học năm 2016",
-  "img-52": "Trường Đại học Khoa học Tự nhiên trao học bổng và quà Tết cho sinh viên, học viên khoa Toán – Cơ – Tin học 2026",
-  "img-53": "Ảnh Temp có hình trường",
-  "img-54": "Ảnh thư gọi nhập ngũ",
-  "img-55": "Ảnh tốt nghiệp cũ",
-  "img-56": "Ảnh tốt nghiệp Đại Học Tổng Hợp",
-  "img-57": "Ảnh tốt nghiệp",
-  "img-58": "Ảnh trường tổng hợp xưa và nay",
-  "img-59": "Giấy mời kỷ niệm 55 năm",
-  "img-60": "Giấy mời kỷ niệm 60 năm",
-  "img-61": "Sinh viên Đại Học Tổng Hợp nhập ngũ"
-};
-
-function toAlbumImage(src: string): AlbumImage {
-  const sphereId = albumToSphereMapping[src];
-  const caption = sphereId ? sphereTitles[sphereId] : undefined;
-  if (caption) return { src, caption };
-  const filename = src.split("/").pop() || "";
-  const name = filename.replace(/\.(jpg|jpeg|png|webp)$/i, "").replace(/[-_]/g, " ");
-  if (!name || /^img\d+$/i.test(name.trim())) return { src, caption: "Đang cập nhật tư liệu lịch sử..." };
-  return { src, caption: name };
-}
-
 export const albumTopics: AlbumTopic[] = [
   {
     id: "nhung-nguoi-gieo-mam",
-    title: "Những người gieo mầm",
-    subtitle: "Sự tận tâm của các thế hệ thầy cô",
+    title: "Nh\u1eefng ng\u01b0\u1eddi gieo m\u1ea7m",
+    subtitle: "S\u1ef1 t\u1eadn t\u00e2m c\u1ee7a c\u00e1c th\u1ea7y c\u00f4",
     images: [
-      "/assets/album/1/img01.jpg",
-      "/assets/album/1/img02.jpg",
-      "/assets/album/1/img03.jpg",
-      "/assets/album/1/img04.jpg",
-      "/assets/album/1/img05.jpg",
-      "/assets/album/1/img06.jpg",
-      "/assets/album/1/img07.jpg",
-      "/assets/album/1/img08.jpg",
-      "/assets/album/1/img09.jpg"
-    ].map(toAlbumImage)
+      { src: "/assets/album/1/img01.jpg", caption: "B\u00e1c H\u1ed3 c\u00f9ng T\u1ed5ng Th\u1ed1ng Indonesia th\u0103m \u0111\u1ea1i h\u1ecdc T\u1ed5ng H\u1ee3p" },
+      { src: "/assets/album/1/img02.jpg", caption: "B\u00e1c H\u1ed3 t\u1ea1i l\u1ec5 khai gi\u1ea3ng \u0110\u1ea1i h\u1ecdc t\u1ed5ng h\u1ee3p" },
+      { src: "/assets/album/1/img03.jpg", caption: "GS L\u00ea V\u0103n H\u1ee3p c\u00f9ng sinh vi\u00ean khoa to\u00e1n K1" },
+      { src: "/assets/album/1/img04.jpg", caption: "GS L\u00ea V\u0103n Thi\u00eam" },
+      { src: "/assets/album/1/img05.jpg", caption: "Gi\u00e1o s\u01b0 L\u00ea V\u0103n Thi\u00eam gh\u00e9 th\u0103m c\u00e1c h\u1ecdc tr\u00f2 \u0111ang h\u1ecdc t\u1ea1i tr\u01b0\u1eddng \u0110H T\u1ed5ng h\u1ee3p Lomonosov n\u0103m 1961_" },
+      { src: "/assets/album/1/img06.jpg", caption: "Gi\u00e1o s\u01b0 L\u00ea V\u0103n Thi\u00eam v\u1edbi c\u1ee5m c\u00f4ng tr\u00ecnh to\u00e1n h\u1ecdc \u1ee9ng d\u1ee5ng" },
+      { src: "/assets/album/1/img07.jpg", caption: "Gi\u00e1o s\u01b0 \u0110\u00e0m Trung \u0110\u1ed3n c\u00f9ng \u0111\u1ea1i t\u01b0\u1edbng V\u00f5 Nguy\u00ean Gi\u00e1p" },
+      { src: "/assets/album/1/img08.jpg", caption: "\u1ea2nh ch\u1ee5p chung c\u00e1c gi\u00e1o s\u01b0 th\u1ebf h\u1ec7 \u0111\u1ea7u" },
+      { src: "/assets/album/1/img09.jpg", caption: "\u1ea2nh \u0111\u1ea1i h\u1ecdc t\u1ed5ng h\u1ee3p x\u01b0a" },
+    ]
   },
   {
     id: "the-he-tiep-noi",
-    title: "Thế hệ tiếp nối",
-    subtitle: "Ký ức thanh xuân và những nỗ lực bền bỉ",
+    title: "Th\u1ebf h\u1ec7 ti\u1ebfp n\u1ed1i",
+    subtitle: "K\u1ef7 ni\u1ec7m thanh xu\u00e2n v\u00e0 nh\u1eefng ng\u01b0\u1eddi b\u1ea1n c\u0169",
     images: [
-      "/assets/album/2/img01.jpg",
-      "/assets/album/2/img02.jpg",
-      "/assets/album/2/img03.jpg",
-      "/assets/album/2/img04.jpg",
-      "/assets/album/2/img05.jpg",
-      "/assets/album/2/img06.jpg",
-      "/assets/album/2/img07.jpg",
-      "/assets/album/3/img01.jpg",
-      "/assets/album/3/img02.jpg",
-      "/assets/album/3/img03.jpg",
-      "/assets/album/3/img04.jpg",
-      "/assets/album/3/img05.jpg",
-      "/assets/album/3/img06.jpg",
-      "/assets/album/3/img07.jpg",
-      "/assets/album/3/img08.jpg",
-      "/assets/album/4/img01.jpg",
-      "/assets/album/4/img02.jpg",
-      "/assets/album/4/img03.jpg",
-      "/assets/album/4/img04.jpg",
-      "/assets/album/4/img05.jpg",
-      "/assets/album/4/img06.jpg",
-      "/assets/album/4/img07.jpg",
-      "/assets/album/4/img08.jpg",
-      "/assets/album/4/img09.jpg",
-      "/assets/album/4/img10.jpg",
-      "/assets/album/6/img01.jpg",
-      "/assets/album/6/img02.jpg",
-      "/assets/album/6/img03.jpg",
-      "/assets/album/6/img04.jpg",
-      "/assets/album/6/img05.jpg",
-      "/assets/album/6/img06.jpg",
-      "/assets/album/6/img07.jpg",
-      "/assets/album/6/img08.jpg",
-      "/assets/album/7/img01.jpg",
-      "/assets/album/7/img02.jpg",
-      "/assets/album/7/img03.jpg",
-      "/assets/album/7/img04.jpg",
-      "/assets/album/7/img05.jpg",
-      "/assets/album/7/img06.jpg",
-      "/assets/album/7/img07.jpg",
-      "/assets/album/7/img08.jpg",
-      "/assets/album/7/img09.jpg",
-      "/assets/album/7/img10.jpg",
-      "/assets/album/8/img01.jpg",
-      "/assets/album/8/img02.jpg",
-      "/assets/album/8/img03.jpg",
-      "/assets/album/8/img04.jpg",
-      "/assets/album/8/img05.jpg",
-      "/assets/album/8/img06.jpg",
-      "/assets/album/8/img07.jpg",
-      "/assets/album/8/img08.jpg",
-      "/assets/album/8/img09.jpg"
-    ].map(toAlbumImage)
+      { src: "/assets/album/2/img01.jpg", caption: "3 sinh vi\u00ean K14 To\u00e1n c\u01a1 Tin H\u1ecdc" },
+      { src: "/assets/album/2/img02.jpg", caption: "Chuyen KHTN by VNU Media" },
+      { src: "/assets/album/2/img03.jpg", caption: "L\u1ec5 trao th\u01b0\u1edfng gi\u1ea3ng vi\u00ean gi\u1ecfi n\u0103m 1994" },
+      { src: "/assets/album/2/img04.jpg", caption: "M\u00f4t s\u1ed1 sinh vi\u00ean K14 To\u00e1n c\u01a1 Tin H\u1ecdc" },
+      { src: "/assets/album/2/img05.jpg", caption: "M\u00f4t s\u1ed1 sinh vi\u00ean K14 To\u00e1n-C\u01a1-Tin H\u1ecdc" },
+      { src: "/assets/album/2/img06.jpg", caption: "Sinh vi\u00ean K14 khoa To\u00e1n C\u01a1 Tin h\u1ecdc" },
+      { src: "/assets/album/2/img07.jpg", caption: "Th\u1ea7y v\u00e0 tr\u00f2 kh\u1ed1i Chuy\u00ean To\u00e1n 1974" },
+      { src: "/assets/album/3/img01.jpg", caption: "B\u1ebf gi\u1ea3n kh\u00f3a 14 khoa To\u00e1n n\u0103m 1974" },
+      { src: "/assets/album/3/img02.jpg", caption: "B\u1ed9 \u0111\u1ed9i bi\u1ec7t ph\u00e1i k14" },
+      { src: "/assets/album/3/img03.jpg", caption: "Ph\u00e1t bi\u1ec3u b\u1ebf gi\u1ea3ng khoa h\u1ecdc l\u1edbp C\u01a1" },
+      { src: "/assets/album/3/img04.jpg", caption: "Sinh vi\u00ean To\u00e1n C\u01a1 k14" },
+      { src: "/assets/album/3/img05.jpg", caption: "Sinh vi\u00ean k14 ti\u1ebfp qu\u1ea3n trung t\u00e2m m\u00e1y t\u00ednh n\u0103m 1975" },
+      { src: "/assets/album/3/img06.jpg", caption: "Sinh vi\u00ean nam k14 khoa To\u00e1n C\u01a1" },
+      { src: "/assets/album/3/img07.jpg", caption: "Sinh vi\u00ean n\u1eef k14" },
+      { src: "/assets/album/3/img08.jpg", caption: "T\u1eadp th\u1ec3 sinh vi\u00ean k14 khoa To\u00e1n" },
+      { src: "/assets/album/4/img01.jpg", caption: "Bu\u1ed1i seminar n\u0103m  2026" },
+      { src: "/assets/album/4/img02.jpg", caption: "C\u00e1c gi\u1ea3ng vi\u00ean tham gia l\u1ec5 trao gi\u1ea3i c\u00f4ng tr\u00ecnh to\u00e1n h\u1ecdc xu\u1ea5t s\u1eafc n\u0103m 2023" },
+      { src: "/assets/album/4/img03.jpg", caption: "GS L\u00ea V\u0103n Thi\u00eam v\u00e0 c\u00e1c h\u1ecdc tr\u00f2 \u1edf \u0111\u1ea1i h\u1ecdc Lomonsov n\u0103m 1961" },
+      { src: "/assets/album/4/img04.jpg", caption: "G\u1eb7p m\u1eb7t c\u00e1c th\u1ebf h\u1ec7" },
+      { src: "/assets/album/4/img05.jpg", caption: "H\u1ecdp m\u1eb7t c\u1ef1u sinh vi\u00ean n\u0103m 2016" },
+      { src: "/assets/album/4/img06.jpg", caption: "Sinh vi\u00ean k67 nh\u1eadn b\u1eb1ng t\u1ed1t nghi\u1ec7p n\u0103m 2026" },
+      { src: "/assets/album/4/img07.jpg", caption: "\u1ea2nh t\u1eadp th\u1ec3 gi\u1ea3ng vi\u00ean n\u0103m 2016" },
+      { src: "/assets/album/4/img08.jpg", caption: "\u1ea2nh t\u1eadp th\u1ec3 gi\u1ea3ng vi\u00ean" },
+      { src: "/assets/album/6/img01.jpg", caption: "60 n\u0103m Khoa To\u00e1n - C\u01a1 - Tin h\u1ecdc" },
+      { src: "/assets/album/6/img02.jpg", caption: "Cu\u1ed9c thi Data Flow cho sinh vi\u00ean" },
+      { src: "/assets/album/6/img03.jpg", caption: "H\u1ed9i tr\u01b0\u1eddng t\u1ea7ng 7" },
+      { src: "/assets/album/6/img04.jpg", caption: "Sinh vi\u00ean \u0111i d\u00e3 ngo\u1ea1i" },
+      { src: "/assets/album/6/img05.jpg", caption: "Tr\u01b0\u1eddng h\u00e8 2026" },
+      { src: "/assets/album/6/img06.jpg", caption: "T\u1eadp hu\u1ea5n k\u1ef9 n\u0103ng m\u1ec1m cho sinh vi\u00ean" },
+      { src: "/assets/album/6/img07.jpg", caption: "\u1ea2nh ch\u1ee5p t\u1eadp th\u1ec3" },
+      { src: "/assets/album/6/img08.jpg", caption: "\u1ea2nh sinh vi\u00ean t\u1ea1i Hola Park" },
+      { src: "/assets/album/7/img01.jpg", caption: "G\u1eb7p m\u1eb7t sinh vi\u00ean k70 n\u0103m 2025" },
+      { src: "/assets/album/7/img02.jpg", caption: "H\u1ed9i ngh\u1ecb khoa h\u1ecdc sinh vi\u00ean 2026" },
+      { src: "/assets/album/7/img03.jpg", caption: "H\u1ed9i th\u1ea3o chia s\u1ebb v\u1ec1 \u0111\u1ecbnh h\u01b0\u1edbng vi\u1ec7c l\u00e0m cho sinh vi\u00ean ng\u00e0nh To\u00e1n h\u1ecdc v\u00e0 To\u00e1n tin 2025" },
+      { src: "/assets/album/7/img04.jpg", caption: "L\u1ec5 t\u1ed1t nghi\u1ec7p n\u0103m 2026" },
+      { src: "/assets/album/7/img05.jpg", caption: "L\u1ec5 t\u1ed5ng k\u1ebft v\u00e0 trao Gi\u1ea3i th\u01b0\u1edfng c\u00f4ng tr\u00ecnh to\u00e1n h\u1ecdc xu\u1ea5t s\u1eafc n\u0103m 2023" },
+      { src: "/assets/album/7/img06.jpg", caption: "Ng\u00e0y h\u01b0\u1edbng nghi\u1ec7p 2026" },
+      { src: "/assets/album/7/img07.jpg", caption: "Sinh vi\u00ean Khoa tham gia tr\u01b0\u1eddng h\u00e8 to\u00e1n 2022" },
+      { src: "/assets/album/7/img08.jpg", caption: "Tr\u01b0\u1eddng \u0110\u1ea1i h\u1ecdc Khoa h\u1ecdc T\u1ef1 nhi\u00ean trao h\u1ecdc b\u1ed5ng v\u00e0 qu\u00e0 T\u1ebft cho sinh vi\u00ean, h\u1ecdc vi\u00ean khoa To\u00e1n \u2013 C\u01a1 \u2013 Tin h\u1ecdc 2026" },
+      { src: "/assets/album/7/img09.jpg", caption: "T\u1eadp th\u1ec3 c\u00e1n b\u1ed9 Khoa To\u00e1n - C\u01a1 - Tin h\u1ecdc n\u0103m 2016" },
+      { src: "/assets/album/7/img10.jpg", caption: "\u0110\u1ed9i ng\u0169 gi\u1ea3ng vi\u00ean khoa To\u00e1n C\u01a1 Tin h\u1ecdc 2026" },
+      { src: "/assets/album/8/img01.jpg", caption: "Gi\u1ea5y m\u1eddi k\u1ef7 ni\u1ec7m 55 n\u0103m" },
+      { src: "/assets/album/8/img02.jpg", caption: "Gi\u1ea5y m\u1eddi k\u1ef7 ni\u1ec7m 60 n\u0103m" },
+      { src: "/assets/album/8/img03.jpg", caption: "Sinh vi\u00ean \u0110\u1ea1i H\u1ecdc T\u1ed5ng H\u1ee3p nh\u1eadp ng\u0169" },
+      { src: "/assets/album/8/img04.jpg", caption: "\u1ea2nh Temp c\u00f3 h\u00ecnh tr\u01b0\u1eddng" },
+      { src: "/assets/album/8/img05.jpg", caption: "\u1ea2nh th\u01b0 g\u1ecdi nh\u1eadp ng\u0169" },
+      { src: "/assets/album/8/img06.jpg", caption: "\u1ea2nh tr\u01b0\u1eddng t\u1ed5ng h\u1ee3p x\u01b0a v\u00e0 nay" },
+      { src: "/assets/album/8/img07.jpg", caption: "\u1ea2nh t\u1ed1t nghi\u1ec7p c\u0169" },
+      { src: "/assets/album/8/img08.jpg", caption: "\u1ea2nh t\u1ed1t nghi\u1ec7p \u0110\u1ea1i H\u1ecdc T\u1ed5ng H\u1ee3p" },
+      { src: "/assets/album/8/img09.jpg", caption: "\u1ea2nh t\u1ed1t nghi\u1ec7p" },
+    ]
   }
 ];
 
