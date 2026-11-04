@@ -12,8 +12,8 @@ export const timeline: TimelineItem[] = [
     detail:
       "Mỗi hành trình lớn đều bắt đầu từ những bước đi đầu tiên. Trong lịch sử phát triển của Khoa, những năm đầu là giai đoạn đặt nền móng cho hoạt động đào tạo, xây dựng đội ngũ và hình thành truyền thống học thuật. Trong điều kiện cơ sở vật chất còn nhiều hạn chế, những thế hệ giảng viên đầu tiên đã góp phần tạo dựng môi trường học tập, truyền đạt kiến thức và nuôi dưỡng niềm say mê nghiên cứu.",
     images: [
-      "/assets/chapters/1/img01.jpg",
-      "/assets/chapters/1/img02.jpg"
+      "assets/chapters/1/img01.jpg",
+      "assets/chapters/1/img02.jpg"
     ],
     tone: "paper"
   },
@@ -26,9 +26,9 @@ export const timeline: TimelineItem[] = [
     detail:
       "Lịch sử của một đơn vị giáo dục không chỉ được tạo nên bởi những dấu mốc lớn, mà còn được bồi đắp qua từng giờ lên lớp, từng bài giảng và những nỗ lực bền bỉ của thầy và trò. Dẫu hoàn cảnh thay đổi, việc học tập, giảng dạy và vun đắp tri thức vẫn là sợi dây kết nối các thế hệ, tạo điều kiện để tri thức được truyền lại không ngừng nghỉ.",
     images: [
-      "/assets/chapters/2/img01.jpg",
-      "/assets/chapters/2/img02.jpg",
-      "/assets/chapters/2/img03.jpg"
+      "assets/chapters/2/img01.jpg",
+      "assets/chapters/2/img02.jpg",
+      "assets/chapters/2/img03.jpg"
     ],
     tone: "blue"
   },
@@ -41,10 +41,10 @@ export const timeline: TimelineItem[] = [
     detail:
       "Khi giáo dục đại học không ngừng thay đổi, hoạt động đào tạo và nghiên cứu cũng mở rộng theo những yêu cầu mới. Khoa tiếp tục xây dựng đội ngũ, phát triển hoạt động chuyên môn và từng bước định hình những hướng đi phù hợp với sự phát triển của Toán học, Cơ học và Tin học. Mỗi dấu mốc phát triển không chỉ là sự thay đổi về tổ chức, mà còn gợi mở một chặng đường mới.",
     images: [
-      "/assets/chapters/3/img01.jpg",
-      "/assets/chapters/3/img02.jpg",
-      "/assets/chapters/3/img03.jpg",
-      "/assets/chapters/3/img04.jpg"
+      "assets/chapters/3/img01.jpg",
+      "assets/chapters/3/img02.jpg",
+      "assets/chapters/3/img03.jpg",
+      "assets/chapters/3/img04.jpg"
     ],
     tone: "gold"
   },
@@ -57,11 +57,11 @@ export const timeline: TimelineItem[] = [
     detail:
       "Đằng sau mỗi thế hệ sinh viên là những người thầy, người cô đã dành thời gian, tâm huyết cho sự nghiệp giảng dạy. Mỗi khóa sinh viên mang theo những câu chuyện riêng: những ngày đầu bước vào giảng đường, những giờ học miệt mài và những kỷ niệm lưu giữ sau ngày tốt nghiệp. Thời gian đưa mỗi người đến những con đường khác nhau, nhưng mái trường vẫn là sợi dây kết nối.",
     images: [
-      "/assets/chapters/4/img01.jpg",
-      "/assets/chapters/4/img02.jpg",
-      "/assets/chapters/4/img03.jpg",
-      "/assets/chapters/4/img04.jpg",
-      "/assets/chapters/4/img05.jpg"
+      "assets/chapters/4/img01.jpg",
+      "assets/chapters/4/img02.jpg",
+      "assets/chapters/4/img03.jpg",
+      "assets/chapters/4/img04.jpg",
+      "assets/chapters/4/img05.jpg"
     ],
     tone: "violet"
   },
@@ -74,16 +74,16 @@ export const timeline: TimelineItem[] = [
     detail:
       "Từ những lớp học của ngày trước đến môi trường học tập hiện đại, hành trình đào tạo luôn gắn với sự thay đổi của tri thức và công nghệ. Tương lai không bắt đầu từ con số không, nó được xây dựng trên nền tảng tri thức, kinh nghiệm và những giá trị được trao truyền qua nhiều thế hệ. Những thế hệ mới sẽ viết tiếp câu chuyện bằng tri thức, trách nhiệm và khát vọng của chính mình.",
     images: [
-      "/assets/chapters/6/img01.jpg",
-      "/assets/chapters/6/img02.jpg",
-      "/assets/chapters/6/img03.jpg",
-      "/assets/chapters/6/img04.jpg",
-      "/assets/chapters/6/img05.jpg",
-      "/assets/chapters/7/img01.jpg",
-      "/assets/chapters/7/img02.jpg",
-      "/assets/chapters/7/img03.jpg",
-      "/assets/chapters/7/img04.jpg",
-      "/assets/chapters/7/img05.jpg"
+      "assets/chapters/6/img01.jpg",
+      "assets/chapters/6/img02.jpg",
+      "assets/chapters/6/img03.jpg",
+      "assets/chapters/6/img04.jpg",
+      "assets/chapters/6/img05.jpg",
+      "assets/chapters/7/img01.jpg",
+      "assets/chapters/7/img02.jpg",
+      "assets/chapters/7/img03.jpg",
+      "assets/chapters/7/img04.jpg",
+      "assets/chapters/7/img05.jpg"
     ],
     tone: "blue"
   }

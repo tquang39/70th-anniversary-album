@@ -32,7 +32,7 @@ export default function Header() {
   return (
     <header className={`site-header${scrolled ? " is-scrolled" : ""}`}>
       <a className="brand" href="#home" aria-label="Khoa Toán – Cơ – Tin học — về trang chủ">
-        <img className="brand-logo" src="/assets/logo-a70.png" alt="Logo 70 năm" />
+        <img className="brand-logo" src="assets/logo-a70.png" alt="Logo 70 năm" />
         <span className="brand-divider" aria-hidden="true"></span>
         <span className="brand-name">Khoa Toán - Cơ - Tin học</span>
       </a>
