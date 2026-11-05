@@ -31,36 +31,42 @@ export default function Header() {
 
   return (
     <header className={`site-header${scrolled ? " is-scrolled" : ""}`}>
-      <a className="brand" href="#home" aria-label="Khoa Toán – Cơ – Tin học — về trang chủ">
-        <img className="brand-logo" src="assets/logo-a70.png" alt="Logo 70 năm" />
-        <span className="brand-divider" aria-hidden="true"></span>
-        <span className="brand-name">Khoa Toán - Cơ - Tin học</span>
-      </a>
+      <div className="header-inner">
+        <a className="brand" href="#home" aria-label="Khoa Toán – Cơ – Tin học — về trang chủ">
+          <img className="brand-logo" src="assets/logo-a70.png" alt="Logo 70 năm" />
+          <span className="brand-divider" aria-hidden="true"></span>
+          <span className="brand-name">Khoa Toán – Cơ – Tin học</span>
+        </a>
 
-      <nav id="primary-nav" className={`site-nav${menuOpen ? " is-open" : ""}`} aria-label="Điều hướng chính">
-        {navItems.map((item) => (
-          <a
-            key={item.href}
-            href={item.href}
-            className={`nav-link${activeId === item.href.replace("#", "") ? " is-active" : ""}`}
-            aria-current={activeId === item.href.replace("#", "") ? "true" : undefined}
-            onClick={() => setMenuOpen(false)}
-          >
-            {item.label}
-          </a>
-        ))}
-      </nav>
+        <nav
+          id="primary-nav"
+          className={`site-nav${menuOpen ? " is-open" : ""}`}
+          aria-label="Điều hướng chính"
+        >
+          {navItems.map((item) => (
+            <a
+              key={item.href}
+              href={item.href}
+              className={`nav-link${activeId === item.href.replace("#", "") ? " is-active" : ""}`}
+              aria-current={activeId === item.href.replace("#", "") ? "true" : undefined}
+              onClick={() => setMenuOpen(false)}
+            >
+              {item.label}
+            </a>
+          ))}
+        </nav>
 
-      <button
-        className="nav-toggle"
-        type="button"
-        aria-expanded={menuOpen}
-        aria-controls="primary-nav"
-        aria-label={menuOpen ? "Đóng menu" : "Mở menu"}
-        onClick={() => setMenuOpen((open) => !open)}
-      >
-        {menuOpen ? <X size={20} /> : <Menu size={20} />}
-      </button>
+        <button
+          className="nav-toggle"
+          type="button"
+          aria-expanded={menuOpen}
+          aria-controls="primary-nav"
+          aria-label={menuOpen ? "Đóng menu" : "Mở menu"}
+          onClick={() => setMenuOpen((open) => !open)}
+        >
+          {menuOpen ? <X size={20} /> : <Menu size={20} />}
+        </button>
+      </div>
     </header>
   );
 }

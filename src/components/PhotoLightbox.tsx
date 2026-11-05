@@ -3,15 +3,22 @@ import { X } from "lucide-react";
 import type { PhotoItem } from "../types";
 import { useEscapeKey } from "../hooks/useEscapeKey";
 import { useBodyScrollLock } from "../hooks/useBodyScrollLock";
+import { gsap, useGSAP } from "../lib/gsap";
 
 type Props = { photo: PhotoItem; onClose: () => void };
 
 export default function PhotoLightbox({ photo, onClose }: Props) {
+  const root = useRef<HTMLDivElement>(null);
   const panelRef = useRef<HTMLDivElement>(null);
   const previousActive = useRef<HTMLElement | null>(null);
 
   useEscapeKey(true, onClose);
   useBodyScrollLock(true);
+
+  useGSAP(() => {
+    gsap.from(root.current, { autoAlpha: 0, duration: 0.25 });
+    gsap.from(panelRef.current, { autoAlpha: 0, y: 26, scale: 0.96, duration: 0.4, ease: "power3.out" });
+  }, { scope: root });
 
   useEffect(() => {
     previousActive.current = document.activeElement as HTMLElement | null;
@@ -49,6 +56,7 @@ export default function PhotoLightbox({ photo, onClose }: Props) {
 
   return (
     <div
+      ref={root}
       className="lightbox"
       role="dialog"
       aria-modal="true"
