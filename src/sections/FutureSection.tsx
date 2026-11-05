@@ -218,7 +218,9 @@ export default function FutureSection() {
         <form className="tribute-form-card" onSubmit={handleSubmit}>
           <div className="tribute-form-head">
             <span className="tribute-form-tag">Sổ lưu bút 70 năm</span>
-            <h3>Viết thiệp tri ân &amp; Đóng dấu kỷ yếu</h3>
+            <h3>
+              Viết thiệp tri ân <span className="std-amp">&amp;</span> Đóng dấu kỷ yếu
+            </h3>
           </div>
 
           <div className="tribute-fields-row">

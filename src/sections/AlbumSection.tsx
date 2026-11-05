@@ -57,7 +57,9 @@ function ThenNowComparison() {
       <div className="then-now-header">
         <div>
           <span className="album-topic-index">Đối chiếu tư liệu lịch sử</span>
-          <h3>Lăng kính Xưa &amp; Nay (1956 ⇄ 2026)</h3>
+          <h3>
+            Lăng kính Xưa <span className="std-amp">&amp;</span> Nay (1956 ⇄ 2026)
+          </h3>
           <p>Kéo thanh trượt ngang để cảm nhận dòng chảy 70 năm giữa hai thế hệ.</p>
         </div>
 

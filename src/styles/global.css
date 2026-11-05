@@ -672,39 +672,94 @@ p {
   transform: translateY(-1px);
 }
 
-/* Con dấu / Logo kỷ niệm 70 năm đặt gọn ở góc trên phải khung quả cầu */
+/* Con dấu kỷ niệm 70 năm xoay chậm ở góc trên phải khung quả cầu */
+.std-amp {
+  font-family: var(--font-ui);
+  font-style: normal;
+  font-weight: 600;
+}
+
 .hero-seal {
   position: absolute;
   right: 2%;
   top: 2%;
-  width: 92px;
-  height: 92px;
+  width: 98px;
+  height: 98px;
   z-index: 3;
   background: rgba(251, 248, 242, 0.94);
-  border: 1px solid var(--gold-line);
   border-radius: 50%;
-  box-shadow: 0 10px 24px -10px rgba(29, 24, 19, 0.22);
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  padding: 8px;
+  box-shadow: 0 10px 26px -12px rgba(29, 24, 19, 0.26);
+  animation: sealSpin 26s linear infinite;
+  transform-origin: 50% 50%;
   pointer-events: none;
-  animation: heroSealFloat 4s ease-in-out infinite alternate;
 }
 
-.hero-seal-logo {
-  width: 100%;
-  height: 100%;
-  object-fit: contain;
-  filter: drop-shadow(0 2px 4px rgba(29, 24, 19, 0.12));
+.seal-ring {
+  fill: none;
+  stroke: var(--gold-line);
+  stroke-width: 1;
 }
 
-@keyframes heroSealFloat {
-  0% {
-    transform: translateY(0);
-  }
-  100% {
-    transform: translateY(-4px);
+.seal-ring-ticks {
+  stroke: var(--bronze);
+  stroke-width: 1.5;
+  stroke-dasharray: 0.8 4.95;
+  opacity: 0.45;
+}
+
+.seal-ring-thin {
+  stroke-width: 0.65;
+  opacity: 0.72;
+}
+
+.seal-ring-inner {
+  fill: rgba(124, 45, 45, 0.04);
+  stroke: var(--oxblood);
+  stroke-width: 0.9;
+  opacity: 0.55;
+}
+
+.seal-ring-dashed {
+  stroke: var(--bronze);
+  stroke-width: 0.75;
+  stroke-dasharray: 2 2.5;
+  opacity: 0.65;
+}
+
+.seal-text {
+  font-family: var(--font-ui);
+  font-size: 8.2px;
+  font-weight: 600;
+  letter-spacing: 0.085em;
+  fill: var(--bronze-deep);
+}
+
+.seal-numeral {
+  font-family: var(--font-display);
+  font-size: 27px;
+  font-weight: 600;
+  fill: var(--oxblood);
+}
+
+.seal-sub {
+  font-family: var(--font-ui);
+  font-size: 7.5px;
+  font-weight: 700;
+  letter-spacing: 0.24em;
+  fill: var(--bronze-deep);
+}
+
+.seal-years {
+  font-family: var(--font-ui);
+  font-size: 6.2px;
+  font-weight: 600;
+  letter-spacing: 0.06em;
+  fill: var(--muted);
+}
+
+@keyframes sealSpin {
+  to {
+    transform: rotate(360deg);
   }
 }
 
