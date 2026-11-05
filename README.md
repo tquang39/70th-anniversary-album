@@ -2,7 +2,17 @@
 ### Trường Đại học Khoa học Tự nhiên, Đại học Quốc gia Hà Nội
 *(Tiền thân: Đại học Tổng hợp Hà Nội)*
 
+[![Deploy to GitHub Pages](https://github.com/tquang39/70th-anniversary-album/actions/workflows/deploy-pages.yml/badge.svg)](https://tquang39.github.io/70th-anniversary-album/)
+[![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](./LICENSE)
+[![React 19](https://img.shields.io/badge/React-19-61DAFB?logo=react&logoColor=black)](https://react.dev/)
+[![TypeScript](https://img.shields.io/badge/TypeScript-5.x-3178C6?logo=typescript&logoColor=white)](https://www.typescriptlang.org/)
+[![Vite](https://img.shields.io/badge/Vite-7.x-646CFF?logo=vite&logoColor=white)](https://vitejs.dev/)
+[![Three.js](https://img.shields.io/badge/Three.js-WebGL-black?logo=threedotjs&logoColor=white)](https://threejs.org/)
+[![Live Demo](https://img.shields.io/badge/Live_Demo-Truy_cập_web-7C2D2D?style=flat&logo=googlechrome&logoColor=white)](https://tquang39.github.io/70th-anniversary-album/)
+
 Trang web kỷ yếu trực tuyến ghi lại những cột mốc lịch sử, hình ảnh tư liệu và kỷ niệm qua 70 năm xây dựng và phát triển của Khoa Toán – Cơ – Tin học (1956 – 2026).
+
+![Ảnh xem trước trang web](.github/social-preview.png)
 
 ---
 
@@ -69,6 +79,7 @@ Trang web được xây dựng nhằm mang lại trải nghiệm xem kỷ yếu 
 │   │   ├── album/                  # Ảnh tư liệu theo các chuyên mục
 │   │   ├── sphere/                 # 59 ảnh cho khối 3D Photo Sphere
 │   │   ├── dh-tong-hop-sketch.jpg  # Bản phác họa cổng trường 19 Lê Thánh Tông
+│   │   ├── og-preview.png          # Ảnh xem trước OpenGraph (1280x640)
 │   │   └── bg-university.webp      # Ảnh phối cảnh trường
 ├── src/
 │   ├── components/                 # Các thành phần giao diện (Header, 3D Sphere, Lightbox, ...)
@@ -78,6 +89,12 @@ Trang web được xây dựng nhằm mang lại trải nghiệm xem kỷ yếu 
 │   ├── styles/                     # CSS biến tokens, bố cục và hoạt ảnh
 │   ├── App.tsx
 │   └── main.tsx
+├── .github/
+│   ├── ISSUE_TEMPLATE/             # Mẫu form đóng góp ảnh và báo lỗi
+│   ├── workflows/                  # Tự động hóa CI/CD deploy GitHub Pages
+│   └── social-preview.png          # Ảnh bìa hiển thị trên GitHub
+├── CONTRIBUTING.md                 # Hướng dẫn đóng góp ảnh & mã nguồn
+├── LICENSE                         # Giấy phép MIT & quyền sở hữu tư liệu
 ├── index.html
 ├── package.json
 └── vite.config.ts
@@ -119,7 +136,14 @@ Trang web được xây dựng nhằm mang lại trải nghiệm xem kỷ yếu 
 
 ---
 
-## 📝 Ghi Chú & Bản Quyền
+## 🤝 Đóng Góp & Hợp Tác
 
+Mọi ý kiến đóng góp về mã nguồn hoặc tư liệu lịch sử đều rất được hoan nghênh. Vui lòng xem [Hướng dẫn đóng góp (CONTRIBUTING.md)](./CONTRIBUTING.md) để biết thêm chi tiết.
+
+---
+
+## 📝 Giấy Phép & Bản Quyền
+
+- Mã nguồn được phân phối theo [Giấy phép MIT](./LICENSE).
 - Đây là dự án cá nhân được xây dựng nhân dịp kỷ niệm 70 năm thành lập Khoa Toán – Cơ – Tin học (1956 – 2026).
 - Các hình ảnh, tư liệu lịch sử và thông tin được sưu tầm, tổng hợp từ các nguồn tư liệu lưu trữ của Khoa, Nhà trường và các thế hệ thầy trò. Bản quyền tư liệu hình ảnh thuộc về các tác giả và đơn vị sở hữu gốc.
