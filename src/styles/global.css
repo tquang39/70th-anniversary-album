@@ -672,7 +672,7 @@ p {
   transform: translateY(-1px);
 }
 
-/* Con dấu kỷ niệm đặt gọn ở góc trên phải khung quả cầu */
+/* Con dấu / Logo kỷ niệm 70 năm đặt gọn ở góc trên phải khung quả cầu */
 .hero-seal {
   position: absolute;
   right: 2%;
@@ -680,50 +680,31 @@ p {
   width: 92px;
   height: 92px;
   z-index: 3;
-  background: rgba(251, 248, 242, 0.9);
+  background: rgba(251, 248, 242, 0.94);
+  border: 1px solid var(--gold-line);
   border-radius: 50%;
-  box-shadow: 0 8px 24px -12px rgba(29, 24, 19, 0.25);
-  animation: sealSpin 28s linear infinite;
-  transform-origin: 50% 50%;
+  box-shadow: 0 10px 24px -10px rgba(29, 24, 19, 0.22);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 8px;
   pointer-events: none;
+  animation: heroSealFloat 4s ease-in-out infinite alternate;
 }
 
-.seal-ring {
-  fill: none;
-  stroke: var(--gold-line);
-  stroke-width: 1;
+.hero-seal-logo {
+  width: 100%;
+  height: 100%;
+  object-fit: contain;
+  filter: drop-shadow(0 2px 4px rgba(29, 24, 19, 0.12));
 }
 
-.seal-ring-thin {
-  stroke-width: 0.6;
-  opacity: 0.7;
-}
-
-.seal-text {
-  font-family: var(--font-ui);
-  font-size: 8.5px;
-  font-weight: 600;
-  letter-spacing: 0.09em;
-  fill: var(--bronze-deep);
-}
-
-.seal-numeral {
-  font-family: var(--font-display);
-  font-size: 26px;
-  font-weight: 600;
-  fill: var(--oxblood);
-}
-
-.seal-sub {
-  font-family: var(--font-ui);
-  font-size: 8px;
-  letter-spacing: 0.24em;
-  fill: var(--bronze-deep);
-}
-
-@keyframes sealSpin {
-  to {
-    transform: rotate(360deg);
+@keyframes heroSealFloat {
+  0% {
+    transform: translateY(0);
+  }
+  100% {
+    transform: translateY(-4px);
   }
 }
 
